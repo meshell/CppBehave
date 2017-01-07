@@ -9,12 +9,12 @@ set(GTEST_LIBRARY_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
 find_package(GTest REQUIRED)
 
-set(SOURCE_FILES example.cpp include/cpp_behave/test_step.h)
+set(SOURCE_FILES example.cpp include/cpp_behave/test_step.h include/cpp_behave/spec_listener.h src/spec_listener.cpp include/cpp_behave/cpp_behave_main.h src/cpp_behave_main.cpp)
 add_executable(CppBehave ${SOURCE_FILES})
 
 target_link_libraries(CppBehave
         GTest::GTest
-        GTest::Main
+    #    GTest::Main
         )
 
 target_compile_features(CppBehave
