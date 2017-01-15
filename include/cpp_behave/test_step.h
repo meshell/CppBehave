@@ -1,5 +1,5 @@
-#ifndef CPPBEHAVE_TEST_STEP_H_H
-#define CPPBEHAVE_TEST_STEP_H_H
+#ifndef CPPBEHAVE_TEST_STEP_H
+#define CPPBEHAVE_TEST_STEP_H
 
 #include <gtest/gtest.h>
 #include <iostream>
@@ -61,4 +61,4 @@ namespace cpp_behave
     }
 }
 
-#endif //CPPBEHAVE_TEST_STEP_H_H
+#endif //CPPBEHAVE_TEST_STEP_H

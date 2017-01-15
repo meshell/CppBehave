@@ -1,5 +1,4 @@
 #include "cpp_behave/test_step.h"
-#include "cpp_behave/cpp_behave_main.h"
 
 #include <memory>
 
@@ -71,5 +70,3 @@ namespace
     }
 }
 
-
-SPEC_MAIN

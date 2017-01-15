@@ -19,7 +19,6 @@ endif()
 set(LIB_HEADER_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_behave/test_step.h
         ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_behave/spec_listener.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_behave/cpp_behave_main.h
         )
 
 if(MSVC_IDE)
