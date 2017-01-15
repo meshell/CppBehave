@@ -26,13 +26,6 @@ using namespace cpp_behave;
 
 namespace
 {
-    SPEC(A_Dummy, should_do_nothing)
-    {
-
-        "Given a Dummy"_.f([] {});
-        "It should do nothing"_.f([] {});
-    }
-
     SPEC(A_Calculator, should_add_correctly)
     {
         const auto x = 3;
@@ -44,15 +37,16 @@ namespace
 
         "Given a Calculator"_
                 .f([&] { calculator = std::unique_ptr<Calculator>(new Calculator{}); });
-        "and the Number %"_
+        " and the Number %"_
                 .f([](const auto) {}, x);
-        "and the Number %"_
+        " and the Number %"_
                 .f([&](const auto) {}, y);
         "When I add the numbers together"_
                 .f([&]() { result = calculator->add(x, y); });
         "Then the result should be %"_
                 .f([&](const auto expected_result) { ASSERT_EQ(expected_result, result); }, expected_res);
     }
+
 
     SPEC(A_Calculator, should_subtract_correctly)
     {
@@ -63,11 +57,12 @@ namespace
 
         std::unique_ptr<Calculator> calculator;
 
+
         "Given a Calculator"_
                 .f([&] { calculator = std::unique_ptr<Calculator>(new Calculator{}); });
-        "and the Number %"_
+        " and the Number %"_
                 .f([](const auto) {}, x);
-        "and the Number %"_
+        " and the Number %"_
                 .f([&](const auto) {}, y);
         "When I subtract the first from the second"_
                 .f([&]() { result = calculator->subtract(y, x); });

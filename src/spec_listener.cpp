@@ -35,7 +35,7 @@ namespace
                 {
                     continue;
                 }
-                std::cout << "  - Specification '" << replace_underscores(test_case.name())
+                std::cout << "  - Scenario '" << replace_underscores(test_case.name())
                           << " " << replace_underscores(test_info.name())
                           << "' FAILED." << "\n";
             }
@@ -45,22 +45,22 @@ namespace
 
 namespace cpp_behave
 {
-    void SpecListener::OnTestProgramStart(const UnitTest& unit_test)
+    void SpecListener::OnTestProgramStart(const UnitTest& /*unit_test*/)
     {
         std::cout << "-----------------------------------------------------\n";
-    };
+    }
 
     void SpecListener::OnTestCaseStart(const TestCase& test_case)
     {
-        std::cout << "Specification:\n\n";
+        std::cout << "Feature: " << replace_underscores(test_case.name()) << "\n\n";
     }
 
     void SpecListener::OnTestStart(const TestInfo& test_info)
     {
-        std::cout << " - '"
+        std::cout << " Scenario: "
                   << replace_underscores(test_info.test_case_name())
                   << " "
-                  << replace_underscores(test_info.name()) << "':\n";
+                  << replace_underscores(test_info.name()) << "\n";
     }
 
     void SpecListener::OnTestPartResult(const TestPartResult& test_part_result)
@@ -108,7 +108,7 @@ namespace cpp_behave
                       << failed_test_count
                       << " Failed, listed below:\n";
             print_failed_tests(unit_test);
-            std::cout << "\n" << num_failures << " FAILED " << (num_failures == 1 ? "TEST" : "TESTS")
+            std::cout << "\n" << num_failures << " FAILED " << (num_failures == 1 ? "SPEC" : "SPECS")
                       << "\n";
         }
     }
